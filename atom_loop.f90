@@ -7,17 +7,17 @@
     an = 10
     Natoms = 2*(bn*bn*bn)
     Boxsize_x = 2*a0
-    #box size should reflect the size of the entire box. So if we are building a single unit cell
+    # box size should reflect the size of the entire box. So if we are building a single unit cell
     Boxsize_y = 2*a0    
-    #box, a0 is the right size. If we have more unit cells, this should be bigger.
+    # box, a0 is the right size. If we have more unit cells, this should be bigger.
     Boxsize_z = 2*a0    
-    #We are going to build a 2x2x2 box, so each box size should be 2*a0.
+    # We are going to build a 2x2x2 box, so each box size should be 2*a0.
     cuenta = 1
 
     # for good style, we should indent everything inside a loop like how I change it below. You can choose the number of spaces to indent in fortran
     # in python, it is always four spaces.
 
-    #cuenta = 1 ! this is going to keep up with the atom number
+    # cuenta = 1 ! this is going to keep up with the atom number
     
     open(unit=1, file="atom_loop.txt")
     open(unit=2, file="atom_loop.xyz")
@@ -40,7 +40,7 @@
     cuenta = cuenta+1
     write(2,'(a,3f14.6)')"H",(i-1)*a0,(j-1)*a0,(k-1)*a0
         write(1,'(i12,3f14.6)') cuenta,(i-0.5)*a0,(j-0.5)*a0,(k-0.5)*a0 
-        cuenta = cuenta+1 #update the atom number
+        cuenta = cuenta+1 # update the atom number
     write(2,'(a,3f14.6)')"H",(i-0.5)*a0,(j-0.5)*a0,(k-0.5)*a0
 
     end do
